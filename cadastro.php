@@ -5,16 +5,16 @@ include_once "operacoes.php";
 
 function validar($quarto) {
     global $tipos;
-    return strlen($quarto["camas_solteiro"]) >= 4
-        && strlen($quarto["camas_solteiro"]) <= 30
-        && strlen($quarto["camas_casal"]) >= 4
-        && strlen($quarto["camas_casal"]) <= 50
-        && strlen($quarto["area_m2"]) >= 4
-        && strlen($quarto["area_m2"]) <= 200
+    return strlen($quarto["camas_solteiro"]) >= 0
+        && strlen($quarto["camas_solteiro"]) >= 0
+        && strlen($quarto["camas_casal"]) >= 0
+        && strlen($quarto["camas_casal"]) >=0
+        && strlen($quarto["area_m2"]) >= 0
+        && strlen($quarto["area_m2"]) >=0
         && $quarto["reservado"] >= 0
-        && $quarto["reservado"] <= 5000000
-        && $quarto["valor_diaria"] >= 0
-        && $quarto["valor_diaria"] <= 5000000;
+        && $quarto["reservado"] <=1
+       && $quarto["valor_diaria"] >=0
+        && $quarto["valor_diaria"] >=0;
         
         
 }
