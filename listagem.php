@@ -11,29 +11,29 @@ include_once "operacoes.php";
         <title>Listagem de flores</title>
     </head>
     <body>
-        <?php $resultado = listar_todas_flores(); ?>
+        <?php $resultado = listar_todos_quarto(); ?>
         <table>
             <tr>
-                <th scope="column">Chave</th>
-                <th scope="column">Cor</th>
-                <th scope="column">Espécie</th>
-                <th scope="column">Localização</th>
-                <th scope="column">Folhas</th>
-                <th scope="column">Tipo</th>
+                <th scope="column">numero</th>
+                <th scope="column">cama solteiro</th>
+                <th scope="column">camas_casal</th>
+                <th scope="column">area_m2</th>
+                <th scope="column">reservado</th>
+                <th scope="column">valor_diaria</th>
                 <th scope="column"></th>
                 <th scope="column"></th>
             </tr>
             <?php foreach ($resultado as $linha) { ?>
                 <tr>
-                    <td><?= $linha["chave"] ?></td>
-                    <td><?= $linha["cor"] ?></td>
-                    <td><?= $linha["especie"] ?></td>
-                    <td><?= $linha["localizacao"] ?></td>
-                    <td><?= $linha["folhas"] ?></td>
-                    <td><?= $linha["tipo"] ?></td>
+                    <td><?= $linha["numero"] ?></td>
+                    <td><?= $linha["camas_solteiro"] ?></td>
+                    <td><?= $linha["camas_casal"] ?></td>
+                    <td><?= $linha["area_m2"] ?></td>
+                    <td><?= $linha["reservado"] ?></td>
+                    <td><?= $linha["valor_diaria"] ?></td>
                     <td>
                         <button type="button">
-                            <a href="cadastro.php?chave=<?= $linha["chave"] ?>">Editar</a>
+                            <a href="cadastro.php?numero=<?= $linha["numero"] ?>">Editar</a>
                         </button>
                     </td>
                 </tr>

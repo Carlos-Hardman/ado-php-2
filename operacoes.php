@@ -6,7 +6,7 @@ function inserir_quarto($quarto) {
     global $pdo;
     $sql = "INSERT INTO quarto (camas_solteiro, camas_casal, area_m2, reservado, valor_diaria) " .
             "VALUES (:camas_solteiro, :camas_casal, :area_m2, :reservado, :valor_diaria)";
-    $pdo->prepare($sql)->execute($flor);
+    $pdo->prepare($sql)->execute($quarto);
     return $pdo->lastInsertId();
 }
 
@@ -28,7 +28,7 @@ function excluir_quarto($numero) {
     $pdo->prepare($sql)->execute(["numero" => $numero]);
 }
 
-function listar_quarto() {
+function listar_todos_quarto() {
     global $pdo;
     $sql = "SELECT * FROM quarto";
     $resultados = [];
@@ -48,13 +48,3 @@ function buscar_quarto($numero) {
     return $consulta->fetch();
 }
 
-function listar_todos_tipos() {
-    global $pdo;
-    $sql = "SELECT * FROM quarto";
-    $resultados = [];
-    $consulta = $pdo->query($sql);
-    while ($linha = $consulta->fetch()) {
-        $resultados[] = $linha["tipo"];
-    }
-    return $resultados;
-}

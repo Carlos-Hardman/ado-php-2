@@ -3,8 +3,6 @@ try {
     include "abrir_transacao.php";
 include_once "operacoes.php";
 
-$tipos = listar_todos_tipos();
-
 function validar($quarto) {
     global $tipos;
     return strlen($quarto["camas_solteiro"]) >= 4
@@ -16,7 +14,8 @@ function validar($quarto) {
         && $quarto["reservado"] >= 0
         && $quarto["reservado"] <= 5000000
         && $quarto["valor_diaria"] >= 0
-        && $quarto["valor_diaria"] <= 5000000
+        && $quarto["valor_diaria"] <= 5000000;
+        
         
 }
 
@@ -115,28 +114,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 <input type="text" id="camas_casal" name="camas_casal" value="<?= $quarto["camas_casal"] ?>">
             </div>
             <div>
-                <label for="local">Local:</label>
-                <input type="text" id="localizacao" name="localizacao" value="<?= $flor["localizacao"] ?>">
+                <label for="local">area m2:</label>
+                <input type="text" id="area_m2" name="area_m2" value="<?= $quarto["area_m2"] ?>">
             </div>
             <div>
-                <label for="folhas">Folhas:</label>
-                <input type="text" id="folhas" name="folhas" value="<?= $flor["folhas"] ?>">
+                <label for="folhas">reservado:</label>
+                <input type="text" id="reservado" name="reservado" value="<?= $quarto["reservado"] ?>">
             </div>
             <div>
-                <label for="tipo">Tipo de flor:</label>
-                <select id="tipo" name="tipo">
-                    <option>Escolha...</option>
-                    <?php foreach ($tipos as $tipo) { ?>
-                        <option value="<?= $tipo ?>"
-                            <?php if ($flor["tipo"] === $tipo) { ?>
-                            selected
-                            <?php } ?>
-                        >
-                            <?= $tipo ?>
-                        </option>
-                    <?php } ?>
-                </select>
+                <label for="folhas">valor diaria:</label>
+                <input type="text" id="valor_diaria" name="valor_diaria" value="<?= $quarto["valor_diaria"] ?>">
             </div>
+
             <div>
                 <button type="button" onclick="confirmar()">Salvar</button>
             </div>
@@ -145,8 +134,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <form action="excluir.php"
                     method="POST"
                     style="display: none"
-                    id="excluir-flor">
-                <input type="hidden" name="chave" value="<?= $flor["chave"] ?>" >
+                    id="excluir-quarto">
+                <input type="hidden" name="chave" value="<?= $quarto["chave"] ?>" >
             </form>
             <button type="button" onclick="excluir()">Excluir</button>
         <?php } ?>
