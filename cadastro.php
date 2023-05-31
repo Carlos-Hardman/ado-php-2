@@ -1,6 +1,7 @@
 <?php
 try {
     include "abrir_transacao.php";
+    include_once 'conecta-sqlite.php';
 include_once "operacoes.php";
 
 function validar($quarto) {
