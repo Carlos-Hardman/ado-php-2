@@ -1,11 +1,10 @@
 <?php
 try {
     include "abrir_transacao.php";
-    include_once 'conecta-sqlite.php';
-include_once "operacoes.php";
+    include_once "operacoes.php";
 
 function validar($quarto) {
-    global $tipos;
+    
     return strlen($quarto["camas_solteiro"]) >= 0
         && strlen($quarto["camas_solteiro"]) >= 0
         && strlen($quarto["camas_casal"]) >= 0
@@ -46,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if ($alterar) {
         $quarto = [
+            "numero" => $_POST["numero"],
             "camas_solteiro" => $_POST["camas_solteiro"],
             "camas_casal" => $_POST["camas_casal"],
             "area_m2" => $_POST["area_m2"],

@@ -3,6 +3,7 @@ try {
     include "abrir_transacao.php";
 include_once "operacoes.php";
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -16,10 +17,10 @@ include_once "operacoes.php";
             <tr>
                 <th scope="column">numero</th>
                 <th scope="column">cama solteiro</th>
-                <th scope="column">camas_casal</th>
-                <th scope="column">area_m2</th>
+                <th scope="column">camas casal</th>
+                <th scope="column">area m2</th>
                 <th scope="column">reservado</th>
-                <th scope="column">valor_diaria</th>
+                <th scope="column">valor diaria</th>
                 <th scope="column"></th>
                 <th scope="column"></th>
             </tr>
@@ -30,7 +31,7 @@ include_once "operacoes.php";
                     <td><?= $linha["camas_casal"] ?></td>
                     <td><?= $linha["area_m2"] ?></td>
                     <td><?= $linha["reservado"] ?></td>
-                    <td><?= $linha["valor_diaria"] ?></td>
+                   <td><?= $linha["valor_diaria"] ?></td>
                     <td>
                         <button type="button">
                             <a href="cadastro.php?numero=<?= $linha["numero"] ?>">Editar</a>
