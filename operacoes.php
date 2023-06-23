@@ -47,4 +47,3 @@ function buscar_quarto($numero) {
     $consulta->execute(["numero" => $numero]);
     return $consulta->fetch();
 }
-

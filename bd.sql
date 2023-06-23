@@ -6,3 +6,4 @@ CREATE TABLE quarto (
   reservado INTEGER NOT NULL CHECK (reservado = 0 OR reservado = 1),
   valor_diaria INTEGER NOT NULL CHECK (valor_diaria > 0)
 );
+

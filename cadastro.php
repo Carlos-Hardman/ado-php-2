@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Cadastro de folhas</title>
+        <title>Cadastro de Quartos</title>
         <script>
             function confirmar() {
                 if (!confirm("Tem certeza que deseja salvar os dados?")) return;
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             <?php } ?>
             <?php if ($alterar) { ?>
                 <div>
-                    <label for="numero">Chave:</label>
+                    <label for="numero">Numero:</label>
                     <input type="text" id="numero" name="numero" value="<?= $quarto["numero"] ?>" readonly>
                 </div>
             <?php } ?>
@@ -136,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     method="POST"
                     style="display: none"
                     id="excluir-quarto">
-                <input type="hidden" name="chave" value="<?= $quarto["chave"] ?>" >
+                <input type="hidden" name="numero" value="<?= $quarto["numero"] ?>" >
             </form>
             <button type="button" onclick="excluir()">Excluir</button>
         <?php } ?>
